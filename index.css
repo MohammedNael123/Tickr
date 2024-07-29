@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,500;1,500&display=swap');
+
+body {
+    background-color: black;
+    padding: 60px;
+    user-select: none;
+    font-size: 20px;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin: 0; /* Ensure there's no default margin */
+}
+
+nav {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 10px; /* Add padding to nav for spacing */
+    position: relative; /* Ensure proper positioning for the SVG */
+}
+
+nav svg {
+    display: none;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: rgb(170, 157, 83);
+    cursor: pointer;
+}
+
+.hero {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.hero p {
+    background: #CFCFCF;
+    background: radial-gradient(ellipse farthest-corner at center center, #CFCFCF 0%, #AA9D53 53%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 60px;
+    font-size: 60px;
+    padding-bottom: 120px;
+    margin: 0; /* Remove default margin */
+}
+
+.links a {
+    padding: 20px;
+    display: inline-block; /* Make links block-level for spacing */
+}
+
+.mobile-nav {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000; /* Ensure mobile-nav is on top of other content */
+}
+
+.mobile-nav.show {
+    transform: translateY(0);
+}
+
+.mobile-nav svg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.mobile-nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+.New {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding does not affect the overall width */
+}
+
+.New > * {
+    margin: 20px;
+}
+
+.item {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    transition: 0.2s ease-in-out;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px 4px rgba(134,134,134,0.42);
+    -webkit-box-shadow: 0px 0px 14px 4px rgba(134,134,134,0.42);
+    -moz-box-shadow: 0px 0px 14px 4px rgba(134,134,134,0.42);
+}
+
+.item a {
+    padding: 20px;
+}
+
+.item img {
+    max-width: 300px; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.item:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 30px;
+    }
+    nav svg {
+        display: block;
+    }
+    .links a {
+        display: none;
+    }
+    .New {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 765px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero p {
+        font-size: 40px; /* Adjust font size for smaller screens */
+        padding: 30px;
+        padding-bottom: 60px; /* Adjust padding for smaller screens */
+    }
+    .item {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .item img {
+        max-width: 200px; /* Ensure images are responsive */
+
+    }
+}
